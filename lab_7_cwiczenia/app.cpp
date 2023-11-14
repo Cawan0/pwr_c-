@@ -1,4 +1,3 @@
-// Example program
 #include <iostream>
 #include <string>
 #include <array>
@@ -17,9 +16,9 @@ void wyswietl(float tab[], int size){
     int x,y;
     cout<<"Wybierz opcje: ";
     cin>>x;
-    
+
     switch(x){
-        case 1: 
+        case 1:
             cout<<"Wpisz index w liczby ktora chcesz wyswietlic: ";
             cin>>y;
             cout<<endl<<"Tab["<<y<<"] = "<<tab[y]<<endl;
@@ -39,7 +38,7 @@ void wczytaj(float tab[], int size){
     int x,y,z;
     cout<<"Wybierz opcje: ";
     cin>>x;
-    
+
     switch(x){
         case 1:
             cout<<"Wpisz index w liczby ktorą chcesz zmienic: ";
@@ -56,7 +55,7 @@ void wczytaj(float tab[], int size){
                 tab[i]=z;
             }
         break;
-        case 3: 
+        case 3:
             losoweWartosci(tab,size);
         break;
     }
@@ -87,18 +86,30 @@ void ekstrema(float tab[],int size){
     float bottom=tab[0],top=tab[0];
     for(int i=0;i<=(size/2);i++){
         if(top<tab[i] || top<tab[size-i]){
-            top=max(tab[i],tab[(size-1)-i]);   
+            top=max(tab[i],tab[(size-1)-i]);
         }
         if(bottom>tab[i] || bottom>tab[(size-1)-i]){
-            cout<<"min: "<<bottom<<" i: "<<i<<" size-i: "<<(size-1)-i<<" tab[i]: "<<tab[i]<<" tab[size-i]: "<<tab[(size-1)-i]<<endl;
-            bottom=min(tab[i],tab[(size-1)-i]);   
+            bottom=min(tab[i],tab[(size-1)-i]);
         }
     }
     cout<<"Wartosc maksymalna: "<<top<<endl<<"Wartosc minimalna: "<<bottom<<endl;
 }
 
-int main()
-{
+void zliczanie(float tab[],int size){
+    int minus=0,zero=0,plus=0;
+    for(int i=0;i<size;i++){
+        if(tab[i]<0){
+            minus++;
+        }else if(tab[i]==0){
+            zero++;
+        }else if(tab[i]>0){
+            plus++;
+        }
+    }
+    cout<<"Liczb ujemnych w tabeli: "<<minus<<endl<<"Liczby zerowych w tabeli: "<<zero<<endl<<"Liczb dodatnich w tabeli: "<<plus<<endl;
+}
+
+int main(){
     float tab1[15];
     int size = sizeof(tab1)/sizeof(tab1[0]);
     int x=0;
@@ -109,10 +120,11 @@ int main()
         cout<<"3. Suma elementow tablicy"<<endl;
         cout<<"4. Srednia wartosc tabeli"<<endl;
         cout<<"5. Wartosc maksymalna i minimalna"<<endl;
+        cout<<"6. Zliczanie wyrazow dodatnich, zerowych i ujemnych w tabeli"<<endl;
         cout<<endl<<"9. Zakoncz dzialanie programu"<<endl;
         cout<<"Wybierz opcje: ";
         cin>>x;
-        
+
         switch(x){
             case 1:
                 wyswietl(tab1,size);
@@ -128,6 +140,9 @@ int main()
             break;
             case 5:
                 ekstrema(tab1,size);
+            break;
+            case 6:
+                zliczanie(tab1,size);
             break;
         }
     }
