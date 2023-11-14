@@ -1,0 +1,15 @@
+/*
+�wiczenia:
+1. Napisz program wy�wietlaj�cy liczby od 0 do 10.
+2. Napisz program wy�wietlaj�cy liczby z danego zakresu.
+3. Napisz program wy�wietlaj�cy co drug� liczb� z zakresu.
+4. Napisz program obliczaj�cy sum� i warto�� �redni� liczb
+   z zadanego zakresu.
+5. Dodaj sprawdzenie delty do programu z obliczaniem miejsc
+   zerowych funkcji f(x)=ax^2+bx+c
+6. Napisz program wy�wietlaj�cy 10 losowych liczb z zakresu 1 do 100
+7. Napisz program symuluj�cy 10-krotny rzut dwoma ko�ciami do gry
+8. Napisz program wy�wietlaj�cy na ekranie tabliczk� mno�enia
+9. Napisz program obliczaj�cy warto�� wyra�enia n!
+10. Napisz program wy�wietlaj�cy menu.
+*/
